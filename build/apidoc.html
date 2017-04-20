@@ -1,0 +1,300 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >include-all (v4.0.3)</a>
+</h1>
+<h4>An easy way to include all node.js modules within a directory.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.include-all">module include-all</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.include-all.include-all">
+            function <span class="apidocSignatureSpan"></span>include-all
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.include-all.aggregate">
+            function <span class="apidocSignatureSpan">include-all.</span>aggregate
+            <span class="apidocSignatureSpan">(options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.include-all.exists">
+            function <span class="apidocSignatureSpan">include-all.</span>exists
+            <span class="apidocSignatureSpan">(options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.include-all.optional">
+            function <span class="apidocSignatureSpan">include-all.</span>optional
+            <span class="apidocSignatureSpan">(options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.include-all.required">
+            function <span class="apidocSignatureSpan">include-all.</span>required
+            <span class="apidocSignatureSpan">(options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.include-all.scanSync">
+            function <span class="apidocSignatureSpan">include-all.</span>scanSync
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.include-all" id="apidoc.module.include-all">module include-all</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.include-all.include-all" id="apidoc.element.include-all.include-all">
+        function <span class="apidocSignatureSpan"></span>include-all
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function includeAllSync(options) {
+  // This is the original, pre-v1 `include-all` usage.
+  return helpIncludeAllSync(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.include-all.aggregate" id="apidoc.element.include-all.aggregate">
+        function <span class="apidocSignatureSpan">include-all.</span>aggregate
+        <span class="apidocSignatureSpan">(options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">aggregate = function (options, cb) {
+  options.aggregate = true;
+  options.optional = true;
+  return helpBuildDictionary(options, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var includeAll = require(&#x27;include-all&#x27;);
+
+// Could just call `includeAll()` for synchronous usage.
+//
+// But could also take advantage of ASYNCHRONOUS usage via:
+// • includeAll.optional();
+// • includeAll.exists();
+// • includeAll.<span class="apidocCodeKeywordSpan">aggregate</span>();
+```
+
+
+#### Available convenience methods
+
+`include-all` exposes 3 different methods for asynchronous usage.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.include-all.exists" id="apidoc.element.include-all.exists">
+        function <span class="apidocSignatureSpan">include-all.</span>exists
+        <span class="apidocSignatureSpan">(options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (options, cb) {
+  options.optional = true;
+  options.dontLoad = true;
+  return helpBuildDictionary(options, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var includeAll = require(&#x27;include-all&#x27;);
+
+// Could just call `includeAll()` for synchronous usage.
+//
+// But could also take advantage of ASYNCHRONOUS usage via:
+// • includeAll.optional();
+// • includeAll.<span class="apidocCodeKeywordSpan">exists</span>();
+// • includeAll.aggregate();
+```
+
+
+#### Available convenience methods
+
+`include-all` exposes 3 different methods for asynchronous usage.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.include-all.optional" id="apidoc.element.include-all.optional">
+        function <span class="apidocSignatureSpan">include-all.</span>optional
+        <span class="apidocSignatureSpan">(options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">optional = function (options, cb) {
+  options.optional = true;
+  return helpBuildDictionary(options, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var includeAll = require(&#x27;include-all&#x27;);
+
+// Could just call `includeAll()` for synchronous usage.
+//
+// But could also take advantage of ASYNCHRONOUS usage via:
+// • includeAll.<span class="apidocCodeKeywordSpan">optional</span>();
+// • includeAll.exists();
+// • includeAll.aggregate();
+```
+
+
+#### Available convenience methods
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.include-all.required" id="apidoc.element.include-all.required">
+        function <span class="apidocSignatureSpan">include-all.</span>required
+        <span class="apidocSignatureSpan">(options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">required = function (options, cb) {
+  return helpBuildDictionary(options, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.include-all.scanSync" id="apidoc.element.include-all.scanSync">
+        function <span class="apidocSignatureSpan">include-all.</span>scanSync
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scanSync = function (options) {
+
+  // Higher level overrides.
+  options.flatten = true;
+  options.keepDirectoryPath = true;
+
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  // Note: the combination of the following overrides make this
+  // more or less equivalent to `.exists()`-- but synchronous.
+  // Not all options work... instead, this is really designed
+  // for a slightly different kind of use case-- where you want
+  // to recursively, synchronously stat modules, rather than
+  // include them.
+  options.optional = true;
+  options.dontLoad = true;
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  // Finally, some defaults:
+  if (!options.excludeDirs) {
+    options.excludeDirs = /^\.(git|svn)$/;
+  }
+  if (!options.depth) {
+    options.depth = 10;
+  }
+  if (!options.filter) {
+    options.filter = /(.+)$/;
+  }
+
+  // Now call the low-lvl helper.
+  return helpIncludeAllSync(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
